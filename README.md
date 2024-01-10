@@ -6,7 +6,7 @@
 Reference: https://docs.localstack.cloud/user-guide/aws/lambda/
 
 
-1. Create a docker-compose.yml file
+1. Create a docker-compose.yml file and run the container
 
 ```yml
 version: "3.8"
@@ -24,6 +24,12 @@ services:
     volumes:
       - "${LOCALSTACK_VOLUME_DIR:-./volume}:/var/lib/localstack"
       - "/var/run/docker.sock:/var/run/docker.sock"
+```
+
+and 
+
+```sh
+docker-compose up
 ```
 
 2. Create a lambda function (must be "index.js file")
